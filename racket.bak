@@ -170,15 +170,11 @@
 
 
 
-
-
 (define startsize 100)
 (define leftangle 36.87)
 (define rightangle 53.13)
 (define leftmultiplier (/ 5 4))
 (define rightmultiplier (/ 5 3))
-
-
 
 
 
