@@ -2,11 +2,11 @@
 
 (require graphics/turtles)
 
-(turtles #t)
+
 
 
 (define (drawleftsquare size la ra lm rm)
-  (list (if (> size 20) (doleft size la ra lm rm) (left size))))
+  (list (if (> size 3) (doleft size la ra lm rm) (drawsquare size #t))))
 
 (define (doleft size la ra lm rm)
   (list (draw size)
@@ -26,7 +26,7 @@
         (turn -90)))
 
 (define (drawrightsquare size la ra lm rm)
-  (list (if (> size 20)(doright size la ra lm rm) (right size))))
+  (list (if (> size 3)(doright size la ra lm rm) (drawsquare size #f))))
 
 (define (doright size la ra lm rm)
   (list 
@@ -47,26 +47,12 @@
         (turn 90)))
 
 
-(define (left n)
-  (list (draw n)
-        (turn -90)
-        (draw n)
-        (turn -90)
-        (draw n)
-        (turn -90)
-        (draw n)
-        (turn -90)))
 
-(define (right n)
-  (list (draw n)
-        (turn 90)
-        (draw n)
-        (turn 90)
-        (draw n)
-        (turn 90)
-        (draw n)
-        (turn 90)))
 
+(define (drawsquare n isLeft)
+  (for ([i 4])
+    (draw n)
+    (if isLeft (turn -90) (turn 90))))
 
 
 
@@ -80,11 +66,18 @@
 
 
 
+(define (drawtree startsize la ra lm rm)
+  (turn -90)
+  (move 300)
+  (turn 180)
+  (list (drawleftsquare startsize la ra lm rm)
+))
 
+(turtles #t)
 
-#|(draw (drawleftsquare startsize leftangle rightangle leftmultiplier rightmultiplier))|#
-(draw (drawleftsquare startsize 45 45 (sqrt 2) (sqrt 2)))
-(draw (drawleftsquare startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2)))
+#|(drawtree startsize leftangle rightangle leftmultiplier rightmultiplier)|#
+#|(drawtree startsize 45 45 (sqrt 2) (sqrt 2))|#
+(drawtree startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2))
 
 
 
