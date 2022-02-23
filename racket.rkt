@@ -150,9 +150,9 @@
 
 
 (define (drawsquare n isLeft)
-    (print "yp")
-    (forward 100)
-    (if isLeft (turn-right 90) (turn-left 90)))
+  (list
+    (forward n)
+    (if isLeft (turn-right 90) (turn-left 90))))
 
 
 
