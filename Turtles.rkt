@@ -57,12 +57,6 @@
 
 
 
-(define startsize 100)
-(define leftangle 36.87)
-(define rightangle 53.13)
-(define leftmultiplier (/ 5 4))
-(define rightmultiplier (/ 5 3))
-
 
 
 
@@ -73,11 +67,20 @@
   (list (drawleftsquare startsize la ra lm rm)
 ))
 
+
+
+(define startsize 100)
+(define leftangle 36.87)
+(define rightangle 53.13)
+(define leftmultiplier (/ 5 4))
+(define rightmultiplier (/ 5 3))
+
+
 (turtles #t)
 
-#|(drawtree startsize leftangle rightangle leftmultiplier rightmultiplier)|#
+(drawtree startsize leftangle rightangle leftmultiplier rightmultiplier)
 #|(drawtree startsize 45 45 (sqrt 2) (sqrt 2))|#
-(drawtree startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2))
+#|(drawtree startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2))|#
 
 
 

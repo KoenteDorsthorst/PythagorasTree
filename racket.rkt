@@ -107,7 +107,7 @@
 |#
 
 (define (drawleftsquare size la ra lm rm)
-  (list (if (> size 20) (doleft size la ra lm rm) (left size))))
+  (list (if (> size 20) (doleft size la ra lm rm) (repeat 4 (drawsquare size #t)))))
 
 (define (doleft size la ra lm rm)
   (list (forward size)
@@ -127,7 +127,7 @@
         (turn-right 90)))
 
 (define (drawrightsquare size la ra lm rm)
-  (list (if (> size 20)(doright size la ra lm rm) (right size))))
+  (list (if (> size 20)(doright size la ra lm rm) (repeat 4 (drawsquare size #f)))))
 
 (define (doright size la ra lm rm)
   (list 
@@ -148,27 +148,11 @@
         (turn-left 90)))
 
 
-(define (left n)
-  (list (forward n)
-        (turn-right 90)
-        (forward n)
-        (turn-right 90)
-        (forward n)
-        (turn-right 90)
-        (forward n)
-        (turn-right 90)))
 
-(define (right n)
-  (list (forward n)
-        (turn-left 90)
-        (forward n)
-        (turn-left 90)
-        (forward n)
-        (turn-left 90)
-        (forward n)
-        (turn-left 90)))
-
-
+(define (drawsquare n isLeft)
+    (print "yp")
+    (forward 100)
+    (if isLeft (turn-right 90) (turn-left 90)))
 
 
 
