@@ -1,12 +1,13 @@
 #lang racket/base
 
 (require graphics/turtles)
+(require racket/math)
 
 
 
 
 (define (drawleftsquare size la ra lm rm)
-  (list (if (> size 3) (doleft size la ra lm rm) (drawsquare size #t))))
+  (list (if (> size 40) (doleft size la ra lm rm) (drawsquare size #t))))
 
 (define (doleft size la ra lm rm)
   (list (draw size)
@@ -26,7 +27,7 @@
         (turn -90)))
 
 (define (drawrightsquare size la ra lm rm)
-  (list (if (> size 3)(doright size la ra lm rm) (drawsquare size #f))))
+  (list (if (> size 40)(doright size la ra lm rm) (drawsquare size #f))))
 
 (define (doright size la ra lm rm)
   (list 
@@ -57,9 +58,6 @@
 
 
 
-
-
-
 (define (drawtree startsize la ra lm rm)
   (turn -90)
   (move 300)
@@ -71,16 +69,20 @@
 
 (define startsize 100)
 (define leftangle 36.87)
-(define rightangle 53.13)
+(define rightangle (- 90 leftangle))
 (define leftmultiplier (/ 5 4))
 (define rightmultiplier (/ 5 3))
 
 
 (turtles #t)
 
-(drawtree startsize leftangle rightangle leftmultiplier rightmultiplier)
-#|(drawtree startsize 45 45 (sqrt 2) (sqrt 2))|#
+#|(drawtree startsize leftangle rightangle leftmultiplier rightmultiplier)|#
+(drawtree startsize 45 45 (sqrt 2) (sqrt 2))
 #|(drawtree startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2))|#
+
+
+
+
 
 
 
