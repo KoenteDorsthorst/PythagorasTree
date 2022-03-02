@@ -92,8 +92,6 @@
 (turtles #t)
 
 (drawtree startsize)
-#|(drawtree startsize 45 45 (sqrt 2) (sqrt 2))|#
-#|(drawtree startsize 14.036 75.964 (/ 8.24621 8) (/ 8.24621 2))|#
 
 
 
